@@ -5,6 +5,7 @@ body {
 	color: #e9e8e7;
 	margin: 0; padding: 0;
 }
+
 h1 {
 	font: bold 40px Helvetica;
 	color: #8b8685;
@@ -13,7 +14,10 @@ h1 {
 }
 
 html, body {
+	margin: 0;
 	height: 100%;
+	overflow: hidden;
+	user-select: none;
 }
 
 .component {

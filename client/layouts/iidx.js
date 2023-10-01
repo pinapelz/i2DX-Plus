@@ -13,12 +13,12 @@
 		}
 
 		function y(index) {
-			return 108 + 245 * (index % 2);
+			return 0 + 245 * (index % 2);
 		}
 
 		function style(index) {
 			var style = {
-				bottom: (108 + 245 * (index % 2)) + 'px',
+				bottom: y(index) + 'px',
 				width: '120px',
 				height: '200px'
 			};

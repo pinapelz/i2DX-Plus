@@ -1,4 +1,4 @@
-generate-exe.py py2exe
+py generate-exe.py py2exe
 mkdir i2DX
 move dist i2DX\server
 xcopy /e /i ..\client i2DX\client

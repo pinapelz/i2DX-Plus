@@ -4,7 +4,7 @@ from os import path
 import socket
 import sys
 import glob
-from ConfigParser import RawConfigParser
+from configparser import RawConfigParser
 
 config = RawConfigParser(allow_no_value=True)
 config.read(path.join(path.dirname(sys.argv[0]), 'config.ini'))
@@ -32,8 +32,8 @@ class I2DXWebSocket(websocket.WebSocketHandler):
 
 	def open(self):
 		self.write_message("Ready")
-		self.stream.socket.setsockopt(socket.SOL_TCP, socket.TCP_NODELAY, 0)
-		print "i2dx connection opened!"
+		#self.stream.socket.setsockopt(socket.SOL_TCP, socket.TCP_NODELAY, 0)
+		print("i2dx connection opened!")
 
 	def on_message(self, message):
 		parts = message.split(';')
@@ -44,10 +44,10 @@ class I2DXWebSocket(websocket.WebSocketHandler):
 		elif parts[0] == 'junk':
 			pass
 		else:
-			print "unknown message", parts[0]
+			print("unknown message", parts[0])
 
 	def on_close(self):
-		print "connection closed"
+		print("connection closed")
 
 
 class NoCacheStaticFileHandler(tornado.web.StaticFileHandler):
@@ -67,7 +67,7 @@ def serve(handler):
 
 	port = config.getint('listen', 'port')
 	address = config.get('listen', 'address')
-	print "listening on port", port, "address", address
+	print("listening on port", port, "address", address)
 
 	application.listen(port)
 

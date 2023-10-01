@@ -6,7 +6,8 @@
 
 <meta charset="UTF-8">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="viewport" content="width=1024">
+<meta name="viewport" content="width=device-width(), initial-scale=0.8, maximum-scale=1.0, user-scalable=no" />
+<meta name="theme-color" content="#000000">
 
 <script src=js/i2DX.js></script>
 <script src=js/i2DX/io/Connection.js></script>
@@ -32,8 +33,11 @@
 	document.write('<link rel="apple-touch-icon" href="skins/' + i2DX.getParam('skin') + '/icon.png">');
 })();
 
+window.onload = function(e) {
+	document.documentElement.requestFullscreen();
+}
+
 </script>
 
 </head>
 <body onload="i2DX.initClient()">
-<h1>i2DX</h1>

@@ -5,10 +5,10 @@
  */
 i2DX.Application = function() {
 
-	this._statusEl = document.createElement('div');
+	/* this._statusEl = document.createElement('div');
 	this._statusEl.className = 'status';
 	document.body.appendChild(this._statusEl);
-	i2DX.listen('status', i2DX.proxy(this, '_onstatus'));
+	i2DX.listen('status', i2DX.proxy(this, '_onstatus')); */
 
 	this._layout = i2DX.getParam('layout');
 
