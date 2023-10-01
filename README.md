@@ -2,22 +2,12 @@
 * Go to [__Download Page__](https://github.com/dtinth/i2DX/downloads) to download latest version of i2DX.
 
 
-&nbsp;
-
-
 __Video Demos__
 
 * [1 iPad + 1 iPod Touch + StepMania](http://www.youtube.com/watch?v=C3cZsZYK4Jo) / Ristaccia
 * [2 iPads + StepMania](http://www.youtube.com/watch?v=f7GBGOO5DRw&feature=channel) / garden
 * [2 iPads v.s. Home Controller + Lunatic Rave 2](http://www.youtube.com/watch?v=RfJ5FoVZiBs) / being torn the sky
 * [1 iPad](http://www.youtube.com/watch?v=tiuCW311GEA) / Elisha
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
 
 i2DX
 =======
@@ -38,11 +28,11 @@ someone's device and use it as a scratch controller [see below] :P).
 It uses the following technologies:
 
 * [WebSocket](http://websocket.org/)
-* Python __2.7__
+* Python __3.9+__
 	* [Tornado Web Server](http://www.tornadoweb.org/)
 	* [pyOSC](https://trac.v2.nl/wiki/pyOSC)
 * [OSCulator](http://www.osculator.net/) (Mac)
-* [autopy](http://www.autopy.org/) (Windows)
+* keyboard
 
 
 
@@ -55,37 +45,30 @@ the server via WebSocket and send the press / release events.
 __On Mac__: The WebSocket server then sends these events via OSC to OSCulator, which can then be used to
 map the received OSC events to joystick events and pass it to the game.
 
-__On Windows__: The WebSocket server then use autopy to press the keys.
-
-
+__On Windows__: The WebSocket server then uses the keyboard library to press the keys.
 
 The Controllers
 ---------------
 
-![Main Controller](http://dl.dropbox.com/u/25097375/Documentation%20Images/i2DX/Main.png?x=1)
-
-![Alternate Controller (scratch on the right)](http://dl.dropbox.com/u/25097375/Documentation%20Images/i2DX/Alternate.png?x=1)
-
-![Scratch Controller for iPad](http://dl.dropbox.com/u/25097375/Documentation%20Images/i2DX/Scratch2.png?x=1)
-
-![Scratch Controller for Small Screens](http://dl.dropbox.com/u/25097375/Documentation%20Images/i2DX/Scratch.png?x=1)
-
-
+* IIDX 1P
+* IIDX 2P
+* IIDX Turntable
+* Jubeat
+* Pop'n Music
+* Taiko
 
 Setup
 -----
 
-* A computer with beatmaniaIIDX simulator (I use StepMania 5 with IIDX15 theme)
-* An iPad or an Android tablet device with Opera Mobile
+* A computer with beatmaniaIIDX simulator (recommended: LR2, Beatoraja or [Bemuse](https://bemuse.ninja))
+* An iPad or an Android tablet device with Chrome
 * An additional device (iPad, iPhone, iPod touch, or almost any touch Android phones) (optional, used as a dedicated scratch controller)
 * A working WiFi connection (may or may not have internet access. In my opinion, ad-hoc is the best)
-
-
 
 Server Instructions (Mac OS X + OSCulator)
 ------------------------------------------
 
-Install [Python 2.7](http://www.python.org/download/) first.
+Install [Python 3.9+](http://www.python.org/download/) first.
 
 Then you have to install OSCulator, and then use Terminal to install Tornado and pyOSC Python modules.
 
@@ -109,38 +92,31 @@ Press the buttons and try out the scratches. The OSC messages should show up in 
 Then in OSCulator, map the messages to the joystick events and enjoy!
 
 
-
-
-
 <span id="easy-installation-windows">Server Instructions (Windows + autopy) (Easy)</span>
 ---------------------------------------------
 
-Just download the latest [i2DX-Windows-abcdefg.zip](https://github.com/dtinth/i2DX/downloads),
-extract, go to __server__, and run __server-windows-autopy.exe__.
+~~Just download the latest [i2DX-Windows-abcdefg.zip](https://github.com/dtinth/i2DX/downloads),~~
+~~extract, go to __server__, and run __server-windows-autopy.exe__.~~
 
-On your device, open a web browser and go to i2DX (see __Client Instructions__ below).
-Try pressing the buttons, it should type something on your keyboard.
+~~On your device, open a web browser and go to i2DX (see __Client Instructions__ below).~~
+~~Try pressing the buttons, it should type something on your keyboard.~~
 
-__Then open your game, and set the keyboard config, and enjoy!!__
+~~__Then open your game, and set the keyboard config, and enjoy!!__~~
 
-Or if you want to change the key when the button is being pressed,
-edit `key-config.txt`. (Do not leave any blank line.)
+~~Or if you want to change the key when the button is being pressed,~~
+~~edit `key-config.txt`. (Do not leave any blank line.)~~
 
+Coming soon
 
 Server Instructions (Windows + autopy) (Advanced)
 -------------------------------------------------
 
 Download __Python__ from [python.org](http://python.org/download/). I use Python 2.7 as of time of writing.
 
-Then download and install [__AutoPy__](http://pypi.python.org/pypi/autopy/).
-
-Then download and install [__setuptools__](pypi.python.org/pypi/setuptools).
-
 Then open command prompt and run
 
-    C:\Python27\Scripts\easy_install tornado
-
-(replace `C:\Python27` with where you installed Python)
+    pip install keyboard
+    pip install tornado
 
 And then go to the __server__ directory and run __server-windows-autopy.py__.
 
@@ -150,13 +126,10 @@ Try pressing some keys, it should type something on your keyboard.
 With that set, open your game and map the pressed key to the corresponding input!
 
 
-
-
-
 <span id="client-instructions">Client Instructions</span>
 -------------------
 
-__Android Users:__ use Opera Mobile!
+__Android Users:__ use Chrome!
 
 __For Opera Mobile:__ before using, go to opera:config and search for WebSockets
 and __Enable WebSockets__ first, then tap __Save__.
@@ -167,7 +140,7 @@ Then, use your device's web browser to navigate to
 
 You will see a launcher. Set the settings and click Launch i2DX.
 
-If everything works correctly, then it should say "Ready" at the top left corner.
+~~If everything works correctly, then it should say "Ready" at the top left corner.~~
 
 You can bring another device to use it as a dedicated scratch controller.
 I borrowed my friend's iPod Touch for this.
@@ -182,16 +155,12 @@ Now that if you have a scratch controller, you may not want it on the main contr
 you can move the scratch area of the main controller to the right.
 
 
-
 Hard Mode
 ---------
 
 In normal mode, you can slide between buttons.
 On real machines / controllers, you might not be able to do that, so in hard
 mode, you cannot slide between buttons.
-
-
-
 
 OSC Message maps
 ----------------
@@ -205,8 +174,6 @@ OSC Message maps
 * `/key/6`: Key 7
 * `/key/8`: Scratch Up
 * `/key/9`: Scratch Down
-
-
 
 Keyboard maps (Windows)
 -----------------------
@@ -223,4 +190,4 @@ Keyboard maps (Windows)
 * `o`: Start
 * `p`: Select
 
-You can change key mappings in `server\key-config.txt`.
+You can change key mappings in `server\config.ini`.
