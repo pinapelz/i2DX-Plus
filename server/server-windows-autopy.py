@@ -1,8 +1,7 @@
-import sys
 import libi2dx
-from os import path
 import keyboard
 from configparser import ConfigParser
+import pyuac
 
 def toggle(key, state):
 	print(key, state)
@@ -19,4 +18,9 @@ class I2DXWebSocketAutoPy(libi2dx.I2DXWebSocket):
 			print("key map not found for %s, player %s" % (key_id, player))
 
 if __name__ == "__main__":
-	libi2dx.serve(I2DXWebSocketAutoPy)
+    if not pyuac.isUserAdmin():
+        print("Re-launching as admin!")
+        pyuac.runAsAdmin()
+    else:        
+        	libi2dx.serve(I2DXWebSocketAutoPy)
+
