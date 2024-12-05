@@ -3,3 +3,4 @@
 *.pyc
 server/dist
 server/build
+venv
