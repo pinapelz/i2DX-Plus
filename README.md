@@ -4,6 +4,7 @@ Fork from [Rexxt/i2DX](https://github.com/Rexxt/i2DX)
 
 - Added UAC Admin mode on Windows for functionality via spice2x
 - Migrate Mac version from Python 2 to Python 3
+- Add center_iidx layouts with increased button size and turnable for large tablets
 
 * __Scroll Down__ for installation instructions (Windows and Mac OS X).
 * Go to [__Download Page__](https://github.com/dtinth/i2DX/downloads) to download latest version of i2DX.

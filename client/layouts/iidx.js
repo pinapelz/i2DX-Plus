@@ -9,7 +9,7 @@
 
         function x(index) {
             if(axis == 'center_left' || axis == 'center_right')
-                return window.innerWidth / 2 - 310 + 85 * index;
+                return window.innerWidth / 2 - 310 + 100 * index; // Increased spacing
             return 310 + 85 * index;
         }
 
@@ -37,7 +37,7 @@
             ui.button('iidx_5', style(4));
             ui.button('iidx_6', style(5));
             ui.button('iidx_7', style(6));
-            ui.turntable('220px', map.left);
+            ui.turntable((axis == 'center_left' || axis == 'center_right') ? '280px' : '220px', map.left);
         };
 
     }
