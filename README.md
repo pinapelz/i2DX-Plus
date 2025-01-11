@@ -1,3 +1,4 @@
+# Moved into https://github.com/pinapelz/brokemani
 # i2DX+
 Original i2DX [dtinth/i2DX](https://github.com/dtinth/i2DX)
 Fork from [Rexxt/i2DX](https://github.com/Rexxt/i2DX)
